@@ -1,0 +1,23 @@
+.tagContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+margin-right: 20px;
+margin-top: 13px;   
+}
+
+.tagContainer li{
+    border: 1.5px solid #C9D0E9;
+    border-radius: 20px;
+    margin: 3px;
+    padding:0px 7px;
+    list-style: none;
+    color: #8d9ff1;
+    font-size: 14px;
+    font-weight: 400; 
+}
+.tagContainer li:hover{
+    background-color: #8d9ff1;
+    border: 1.5px solid #8d9ff1;
+    color: #fff;
+}

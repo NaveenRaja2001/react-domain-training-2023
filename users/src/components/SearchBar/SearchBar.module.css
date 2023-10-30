@@ -1,0 +1,25 @@
+.searchBar{
+   padding-left: 13px;
+  
+   
+    font-size: 19.5px;
+    font-weight: 500;
+   border: none;
+   margin-top: 26px;
+    
+}
+.searchBar:focus{
+    outline: none;
+}
+.icon {
+    font-size: 30px;
+  margin-top: 22.5px;
+  margin-left: 20px;
+}
+.searchBarGroup{
+    display: flex;
+    width: 375px;
+    /* padding: 20px 20.5px 0px 15px; */
+    border: 1px solid #C9D0E9;
+    border-radius: 5px;
+}
