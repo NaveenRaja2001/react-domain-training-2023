@@ -1,6 +1,5 @@
 .usercardContainer {
-
-    width: 32%;
+    flex-basis: 32%;
     height: 240px;
     background-color: rgb(251, 252, 256);
     display: flex;
@@ -8,18 +7,21 @@
     border-radius: 20px;
     margin-bottom: 20px;
     box-sizing: border-box;
+
 }
 
 .titleContainer {
-
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
 }
 
 .usercardContainer h2 {
     font-family: 'Merriweather', serif;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 160px;
+    text-overflow: ellipsis;
 
 }
 
@@ -33,5 +35,5 @@
 
 .usercardContainer:hover {
     border: 1px solid #C9D0E9;
-
+    box-shadow: 0 0 20px 3px #C9D0E9;
 }

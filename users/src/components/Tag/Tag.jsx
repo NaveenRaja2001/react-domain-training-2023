@@ -1,15 +1,17 @@
 import style from './Tag.module.css';
 
+/**
+ *@description Method to Tags
+ * @returns Tags
+ * @author NaveenRaja
+ */
+export default function Tag({ tags }) {
 
-export default function Tag({tags}){
-    // const listContent=['mountain','rain','fancy','cool','fdf'];
-    const listContent=tags.map((list)=> <li>{list}</li>);
+  const listContent = tags.map((list) => <li>{list}</li>);
+  const firstFiveListContent = listContent.slice(0, 5);
   return (
-
     <ul className={style.tagContainer}>
-        {listContent}
+      {firstFiveListContent}
     </ul>
-    
-
   );
 }

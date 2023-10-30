@@ -1,4 +1,4 @@
-.list{
+.list {
     list-style: none;
     border-radius: 10px;
     padding: 20px;
@@ -6,15 +6,15 @@
     color: #5c5f6c;
     font-size: 18px;
     font-weight: 500;
-   
+
 }
 
-.list:hover{
+.active {
     background-color: #8d9ff1;
     color: #fff;
 }
 
-.listcontainer{
+.listcontainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

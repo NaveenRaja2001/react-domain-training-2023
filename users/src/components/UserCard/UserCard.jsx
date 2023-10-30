@@ -1,7 +1,12 @@
-import style from './UserCard.module.css';
 import Image from '../Image/Image';
 import Tag from '../Tag/Tag';
+import style from './UserCard.module.css';
 
+/**
+ *@description Method to consrtuct Usercard
+ * @returns UserCard
+ * @author NaveenRaja
+ */
 export default function UserCard({ data }) {
     return (
         <div className={style.usercardContainer}>
