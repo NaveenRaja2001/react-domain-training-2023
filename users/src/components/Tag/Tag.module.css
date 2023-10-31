@@ -15,6 +15,10 @@
     color: #8d9ff1;
     font-size: 14px;
     font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100px;
+    text-overflow: ellipsis;
 }
 
 .tagContainer li:hover {

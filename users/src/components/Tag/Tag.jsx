@@ -5,9 +5,9 @@ import style from './Tag.module.css';
  * @returns Tags
  * @author NaveenRaja
  */
-export default function Tag({ tags }) {
+const Tag=({ tags=[] })=> {
 
-  const listContent = tags.map((list) => <li>{list}</li>);
+  const listContent = tags?.map((list,index) => <li key={index}>{list}</li>);
   const firstFiveListContent = listContent.slice(0, 5);
   return (
     <ul className={style.tagContainer}>
@@ -15,3 +15,4 @@ export default function Tag({ tags }) {
     </ul>
   );
 }
+export default Tag;

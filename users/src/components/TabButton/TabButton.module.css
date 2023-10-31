@@ -4,9 +4,14 @@
     padding: 20px;
     cursor: pointer;
     color: #5c5f6c;
+    border: 2px solid #fff;
     font-size: 18px;
     font-weight: 500;
 
+}
+
+.list:hover{
+    border: 2px solid #8d9ff1;
 }
 
 .active {

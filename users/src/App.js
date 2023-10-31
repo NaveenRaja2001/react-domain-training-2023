@@ -1,5 +1,5 @@
 import './App.css';
-import User from './components/Users/User'
+import User from './pages/UserPage/UserPage'
 
 function App() {
   return (
