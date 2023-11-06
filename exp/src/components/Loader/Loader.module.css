@@ -1,14 +1,3 @@
-.placeDescription{
-    padding: 40px 100px;
-    text-align: justify;
-    font-size: 36px;
-    line-height: 51px;
-    font-weight: 300;
-}
-.placeDescription p{
-    margin-bottom: 40px;
-}
-
 .loaderHeader{
     width: 100%;
     height: 100vh;

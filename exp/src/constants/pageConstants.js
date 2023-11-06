@@ -32,3 +32,11 @@ export const CardConstants={
 
 };
 
+export const toggleScrolling=(scroll=true)=>{
+    if(scroll){
+       document.body.style.overflowY='hidden';
+    }
+    else{
+       document.body.style.overflowY='auto';
+    }
+}
