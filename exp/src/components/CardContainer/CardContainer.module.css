@@ -1,0 +1,25 @@
+.containerFluid{
+    width: 90%;
+    margin: auto;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+ }
+
+ .containerHeader{
+   color:#702053;
+   padding: 20px 110px 0;
+   
+ }
+.containerHeader h3{
+    font-size: 47px;
+    font-weight: 500;
+}
+.containerHeader h4{
+    font-size: 25px;
+    font-weight: 300;
+}
+ 
+ 
+  
+  
