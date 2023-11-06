@@ -1,0 +1,13 @@
+.iconHeader{
+    display: flex;
+    justify-content: space-between;
+    background-color: blueviolet;
+
+}
+
+.iconHeader img{
+    width: 6.5%;
+    margin-left: 55px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

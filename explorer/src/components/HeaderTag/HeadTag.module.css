@@ -1,0 +1,11 @@
+.linkContainer{
+    margin: 30px 20px 30px 0;
+
+}
+.linkContainer button{
+    border: none;
+    color: #7E1F5B;
+    margin: 0 20px;
+    background-color: #fff;
+    cursor: pointer;
+}

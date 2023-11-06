@@ -1,0 +1,15 @@
+ /* Start of button styles */
+ .discriptionButton {
+    color: white;
+    background-color: #702053;
+    border: none;
+    padding: 15px 24px;
+    margin-top: 20px;
+    font-size: large;
+    font-weight: 300;
+ }
+ /* button hover effect */
+ .discriptionButton:hover {
+    cursor: pointer;
+    background-color: #3D163C;
+ }
