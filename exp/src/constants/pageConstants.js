@@ -11,9 +11,6 @@ export const FormConstants={
         HOME_TOWN: "Your Home Town",
         DESTINATION: "Where would you like to go?",
         CONTACT_NUMBER: "Contact Number"
-    },
-     formResultCard:(name='',homeTown='',destination='')=>{
-       return `Thank You ${name} for expressing your interest in travelling with us .Our Sales team will get back with the best packages from ${homeTown} to ${destination}.`
     }
 };
 
@@ -32,11 +29,3 @@ export const CardConstants={
 
 };
 
-export const toggleScrolling=(scroll=true)=>{
-    if(scroll){
-       document.body.style.overflowY='hidden';
-    }
-    else{
-       document.body.style.overflowY='auto';
-    }
-}

@@ -1,14 +1,12 @@
 import PropTypes from 'prop-types';
-import { Link, useNavigate } from "react-router-dom";
+
 import style from './button.module.css';
 
 
-function Button({name='',path='/'}) {
-  const navigate=useNavigate();
+function Button({name='',onClick}) {
   return (
     <div>
-      {/* <Link to={path}><button className={style.discriptionButton}>{name}</button></Link> */}
-     <button className={style.discriptionButton} onClick={()=> navigate(path)}>{name}</button>
+     <button className={style.discriptionButton} onClick={onClick}>{name}</button>
     </div>
   );
 }

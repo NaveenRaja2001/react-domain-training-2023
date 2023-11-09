@@ -4,6 +4,8 @@ import style from '../Contact/contact.module.css';
 import Select from "../Select/Select";
 import Button from "../Button/Button";
 import {FormConstants} from '../../constants/pageConstants'
+import {formResultCard} from '../../utils/ExplorerUtils'
+import Input from '../Input/Input';
 
 function Contact({user=[]})
 {
@@ -25,20 +27,20 @@ function Contact({user=[]})
                 <h1>{FormConstants.TITLE}</h1>
                 <h3>{FormConstants.DESCRIPTION}</h3>
                 <h4>{FormConstants.LABELS.NAME}</h4>
-                <input type={FormConstants.FORM_NAME_INPUT_TYPE} onChange={(e)=>{setName(e.target.value);}} required/>
+                <Input type={FormConstants.FORM_NAME_INPUT_TYPE} onChange={(e)=>{setName(e.target.value);}}/>
                 <h4>{FormConstants.LABELS.HOME_TOWN} </h4>
                <Select onChange={(e)=>{sethomeTown(e.target.value);}} user={user}/>
                 <h4>{FormConstants.LABELS.DESTINATION}</h4>
                 <Select onChange={(e)=>{setdestination(e.target.value);}} user={user}/>
                 <h4>{FormConstants.LABELS.CONTACT_NUMBER}</h4>
-                <input type={FormConstants.FORM_CONTACT_INPUT_TYPE} onChange={(e)=>{setNumber(e.target.value);}} required/>
+                <Input type={FormConstants.FORM_CONTACT_INPUT_TYPE} onChange={(e)=>{setNumber(e.target.value);}}/>
                 <Button name={FormConstants.BUTTON_NAME}></Button>
             </form>
             {
                 isubmitted &&
                 (<div className={style.formCard}>
                     <p>
-                    {FormConstants.formResultCard(name,homeTown,destination)}
+                    {formResultCard(name,homeTown,destination)}
                     </p>
                 </div>)
             }

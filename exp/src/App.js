@@ -1,15 +1,15 @@
 import { Routes, Route } from "react-router-dom";
 import './App.css';
-import IndexPage from './pages/IndexPage/IndexPage.jsx';
 import { DetailPage } from './pages/DetailsPage/DetailPage';
+import ExplorerHomePage from "./pages/ExplorerHomePage/ExplorerHomePage";
 
 
 
 function App() {
   return (
     <Routes>
-        <Route path="/" element={ <><IndexPage/></>}>
-          <Route  path='home' element={ <><IndexPage/></>}/>
+        <Route path="/" element={ <><ExplorerHomePage/></>}>
+          <Route  path='home' element={ <><ExplorerHomePage/></>}/>
         </Route>
         <Route path="/details">
           <Route path=":placeName" element={<DetailPage/> } />

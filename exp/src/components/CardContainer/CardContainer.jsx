@@ -3,6 +3,7 @@ import Card from '../Card/Card';
 import style from '../CardContainer/CardContainer.module.css';
 
 const CardContainer=({user=[],containerTitle='',containerDescription=''})=>{
+   const cards=user.map((ele,ind)=><Card key={ind} data={ele} user={user}></Card>);
    return(
       <>
      <div className={style.containerHeader}>
@@ -10,11 +11,7 @@ const CardContainer=({user=[],containerTitle='',containerDescription=''})=>{
         <h4>{containerDescription}</h4>
         </div>
         <div  className={style.containerFluid}>
-        {user.map((ele,ind)=>{
-                return(
-                    <Card key={ind} data={ele} user={user}></Card>
-                )
-            })}
+        {cards}
      </div>
      </>
    );
