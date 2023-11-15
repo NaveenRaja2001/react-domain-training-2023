@@ -1,0 +1,48 @@
+#bottomContainer{
+    background-color:#f7f7f7;
+
+}
+.contactform
+{
+    padding: 3%;
+    width: 650px;
+    margin: auto;
+}
+.contactform h1{
+    color: #7a1655;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+.contactform h3{
+    margin-top: 8px;
+    color: #964a7a;
+    font-size: 22px;
+    font-weight: 400;
+}
+.contactform h4{
+    margin: 25px 0 5px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.contactform input,select
+{
+    width: 550px;;
+    padding: 3%;
+    font-size: 20px;
+}
+
+.formCard{
+    background-color: #702053;
+    color: #fff;
+    width: 45%;
+    padding: 35px;
+    margin:  0 auto;
+    line-height: 1.2;
+    font-size: 20px;
+    font-weight: 500;
+    
+}
+.formCard p{
+    line-height:30px;
+}

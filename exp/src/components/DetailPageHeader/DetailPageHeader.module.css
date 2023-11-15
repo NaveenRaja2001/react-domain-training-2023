@@ -1,0 +1,33 @@
+.destinationHeader{
+    margin: 50px 0 100px 20px;
+    color:#7E1F5B;
+}
+
+.destinationHeader h3{
+    font-size: 82px;
+    font-weight: 400;
+}
+
+.destinationHeader div{
+    background-color: #7E1F5B;
+    color: #fff;
+    position: relative;
+    left: 00px;
+    z-index: 1;
+    width: 990px;
+    padding: 20px;
+
+}
+
+.destinationHeader h4{
+    font-size: 58px;
+    padding: 40px 20px;
+    line-height: 82px;
+}
+
+.destinationHeader p{
+    margin-top: 30px;
+    font-size: 54px;
+    font-weight: 300;
+    color: #000;
+}
