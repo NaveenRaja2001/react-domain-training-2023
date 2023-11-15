@@ -18,7 +18,6 @@ const Header=({user=[],place='',city='',page=false,img='',temp='0'})=>{
         <div className={style.headerTitle}>
          {page?<DetailPageHeader city={city} place={place} temp={temp}/>:<ExplorePageHeader user={user}/>}
         </div>
-
         <div className={style.headerCoverImg}>
           <img src={img} alt="header cover " />
         </div>
