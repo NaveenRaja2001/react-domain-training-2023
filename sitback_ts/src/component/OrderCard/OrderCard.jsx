@@ -1,13 +1,15 @@
 import React from 'react'
 import style from './OrderCard.module.scss'
 import PropTypes from 'prop-types';
-import {convertIndianRupee} from '../../utils/SitBackUtils'
+import {convertIndianRupee} from '../../utils/SitBackUtils';
+import { addDefaultSrc } from '../../service/ApiService.jsx';
 
 export const OrderCard = ({product}) => {
     const price=convertIndianRupee(product.price);
+    
   return (
     <div className={style.orderCard}>
-        <img src={product.photo} alt={product.name} />
+        <img src={product.photo} alt={product.name} onError={addDefaultSrc}/>
         <div className={style.nameAndPrice}>
             <p>
             {product.name}

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 export const Button = ({name,style,onClick}) => {
   return (
-    <div>
+    <>
         <button className={style} onClick={onClick}>{name}</button>
-    </div>
+    </>
   )
 }
 

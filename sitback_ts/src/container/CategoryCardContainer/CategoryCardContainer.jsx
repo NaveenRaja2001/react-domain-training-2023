@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import style from './CategoryCardContainer.module.scss'
-import SitBackCard from '../CategoryCardContainer/CategoryCard';
+import CategoryCard from '../../component/CategoryCard/CategoryCard';
 import {fetchCategory} from '../../service/ApiService';
 import{catogoriesPageConstants} from '../../constant/pageConstants';
-import Loader from "../Loader/Loader";
+import Loader from "../../component/Loader/Loader";
 
 export const CategoryCardContainer = () => {
     const [catogories, setCatogories] = useState([]);
@@ -17,7 +17,7 @@ export const CategoryCardContainer = () => {
        
     }, [])
 
-  const sitBackCard=catogories?.map((ele,ind)=><SitBackCard key={ind} category={ele}/>);
+  const sitBackCard=catogories?.map((ele,ind)=><CategoryCard key={ind} category={ele}/>);
   return (
     <>
     <div className={style.sitbackCardContainer}>

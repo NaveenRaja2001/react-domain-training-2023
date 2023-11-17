@@ -1,9 +1,10 @@
 import React from 'react'
 import style from './CategoryCard.module.scss'
-import Button from '../Button/Button'
+import Button from '../Button/Button.jsx'
 import {useNavigate} from 'react-router-dom';
-import  CartContainer  from '../CartContainer/CartContainer.tsx';
-import{buttonNames} from '../../constant/pageConstants';
+import  CartContainer  from '../../container/CartContainer/CartContainer.tsx';
+import{buttonNames} from '../../constant/pageConstants.jsx';
+import { addDefaultSrc } from '../../service/ApiService.jsx';
 export const CategoryCard = ({category}) => {
   const navigate = useNavigate();
 
@@ -11,11 +12,12 @@ export const CategoryCard = ({category}) => {
   const navigateToCategory = () => {
     navigate(`/details/${category.id}`);
 }
+
   
   return (
     <>
     <div className={style.categoryCard}>
-        <img src={category?.photo}/>
+        <img src={category?.photo} alt={category?.name} onError={addDefaultSrc}/>
         <h2>{category?.category}</h2>
         <p>
         {category?.description}

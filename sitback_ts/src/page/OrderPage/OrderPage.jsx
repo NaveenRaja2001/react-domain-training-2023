@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import Header from '../../component/Header/Header.tsx';
 import { useState } from "react";
-import CategoryCardContainer from '../../component/SitBackCardContainer/CategoryCardContainer';
-import OrderContainer from '../../component/OrderContainer/OrderContainer';
+import CategoryCardContainer from '../../container/CategoryCardContainer/CategoryCardContainer.jsx';
+import OrderContainer from '../../container/OrderContainer/OrderContainer.jsx';
 import {localStorageVariable} from '../../constant/pageConstants'
 
 const getOrder=()=>{

@@ -5,9 +5,7 @@ import {FaCaretDown} from 'react-icons/fa';
 import{navLinks,headerConstants} from '../../constant/pageConstants';
 
 export const Header = () => {
-    const navButton=navLinks?.map((ele,ind)=>{
-      return <button key={ind}><NavLink to={ele.URL} className={({isActive})=>isActive ?style.active : ''}>{ele.NAME}</NavLink></button>
-    })
+    const navButton=navLinks?.map((ele,ind)=><button key={ind}><NavLink to={ele.URL} className={({isActive})=>isActive ?style.active : ''}>{ele.NAME}</NavLink></button>)
   return (
    <header>
      <Link to={'/'}><h2 className={style.logo}>{headerConstants.headerName}</h2></Link>
