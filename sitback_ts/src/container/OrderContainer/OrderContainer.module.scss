@@ -1,0 +1,19 @@
+.orderContainer{
+  background-color: #f7f7f7;
+  padding: 75px 160px;
+  .title{
+    font-weight: 600;
+    font-size: 22px;
+    // margin-bottom: 10px;
+}
+.subtitle{
+    font-weight: 400;
+    font-size: 17px;
+    padding: 13px 0;
+}
+}
+
+.cardWrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
