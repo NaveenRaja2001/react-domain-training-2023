@@ -1,0 +1,41 @@
+.lotteryContainer {
+    letter-spacing: 0.05rem;
+    background: linear-gradient(to right, #D3B523, #bc971d);
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    .lotteryText {
+        font-size: 28px;
+    }
+
+    input {
+        border: none;
+        padding: 20px 140px 20px 20px;
+        font-size: 15px;
+
+        &::placeholder {
+            color: #c5c5c5;
+        }
+
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+    }
+
+    .luckyMessagetext {
+        font-size: 45px;
+        font-weight: 300;
+        padding: 3px 0;
+    }
+}
+
+.lotteryButton {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    font-size: 25px;
+    padding: 15px 35px;
+}

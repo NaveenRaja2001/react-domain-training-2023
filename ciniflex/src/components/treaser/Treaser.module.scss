@@ -1,0 +1,31 @@
+.videoContainer{
+position: relative;
+width: 445px;
+height: 305px;
+
+.ad{
+   height: 100%;
+}
+}
+
+.pauseIcon{
+ position: absolute;
+ top: 110px;
+ left: 173px;
+ height: 6rem;
+ width: 6rem;
+ cursor: pointer;
+}
+.vedioTitle{
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+.adcounting{
+    p{
+        margin-top: 5px;
+        color: #3566bc;
+    font-size: 16px;
+    font-weight: 600;
+    }
+}

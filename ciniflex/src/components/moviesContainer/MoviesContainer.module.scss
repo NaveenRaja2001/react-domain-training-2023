@@ -1,0 +1,120 @@
+.movieWrapper {
+    height: 73vh;
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 50%;
+    gap: 30px;
+    margin-bottom: 50px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.movieContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+
+.movieContainerTitle {
+
+    font-size: 35px;
+    font-weight: 400;
+    margin: 40px 88px;
+}
+
+.loadMore {
+    color: #ffffff;
+    border: none;
+    width: 210px;
+    padding: 1.2rem 2rem;
+    font-size: 1.3rem;
+    background: linear-gradient(to right, #D3B526, #927516);
+}
+
+.movieDetailContainer {
+    width: 40%;
+    height: 73vh;
+}
+
+.detailsHeader {
+    display: flex;
+    justify-content: space-between;
+
+    .movieTitle {
+        width: 40rem;
+        font-size: 3.3rem;
+        font-weight: 400;
+    }
+
+    .iconWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.3rem;
+        height: 2.3rem;
+        border-radius: 50%;
+        border: 1px solid #ffffff;
+        cursor: pointer;
+    }
+}
+
+.like {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #927516;
+}
+
+.description {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.actorTitle {
+    margin: 1rem 0;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+.actors {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    list-style: none;
+}
+
+.notificationContainer {
+    margin-top: 20px;
+    height: 10px;
+    color: #488ddf;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.detailsImage {
+    width: 155px;
+    height: 195px;
+}
+
+.adcounting {
+    p {
+        margin-top: 5px;
+        color: #3566bc;
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+.addImage {
+    object-fit: fill;
+}
+
+.likeIcon {
+    height: 20px;
+}

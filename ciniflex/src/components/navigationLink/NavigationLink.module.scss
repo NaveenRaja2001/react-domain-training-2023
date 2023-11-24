@@ -1,0 +1,13 @@
+.navContainer{
+    display: flex;
+   a{
+    margin: 20px;
+    text-decoration: none;
+    li{
+        list-style: none;
+        font-size: 22.5px;
+        font-weight: 600;
+        color: white;
+    }
+   }
+}
