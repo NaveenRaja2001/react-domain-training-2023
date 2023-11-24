@@ -4,20 +4,27 @@ import { useState } from "react";
 import CategoryCardContainer from '../../container/CategoryCardContainer/CategoryCardContainer.jsx';
 import OrderContainer from '../../container/OrderContainer/OrderContainer.jsx';
 import {localStorageVariable} from '../../constant/pageConstants'
+import { useNavigate } from 'react-router-dom';
 
 const getOrder=()=>{
-    const myCartData= JSON.parse(localStorage.getItem(localStorageVariable.cart));
+    const myCartData= JSON.parse(localStorage.getItem('order') || '[]');
     return myCartData || [];
 }
 export const OrderPage = () => {
+    const navigate=useNavigate();
     const [myOrder,setMyOrder]=useState(()=> getOrder());
+    
     const removeProductFromCart=()=>{
-        localStorage.removeItem(localStorageVariable.cart);
+        localStorage.removeItem('order');
         localStorage.removeItem(localStorageVariable.totalprice);
     }
     
     useEffect(() => {
+        if(myOrder.length === 0)
+        navigate('/')
         removeProductFromCart()
+        
+    console.log(myOrder.length);
     }, [])
     
   return (

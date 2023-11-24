@@ -10,6 +10,7 @@ export const CategoryCardContainer = () => {
     const [isloading,setIsLoading]=useState(true);
 
     useEffect(() => {
+    
         fetchCategory().then(data=>{
             setCatogories(data);
             setIsLoading(false);

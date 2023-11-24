@@ -6,7 +6,9 @@ import CartCard from '../../component/CartCard/CartCard';
 import CartEmpty from '../../component/CartEmpty/CartEmpty';
 import{buttonNames} from '../../constant/pageConstants';
 import PropTypes from 'prop-types';
-import {cartContainerConstant} from '../../constant/pageConstants'
+import {cartContainerConstant} from '../../constant/pageConstants';
+import { localStorageVariable } from '../../constant/pageConstants.jsx'
+
 
 type CartContainerProps={
     wishlist: any[];
@@ -32,6 +34,10 @@ type Product= {
 }
   
   const CartContainer: React.FC<CartContainerProps> = ({ wishlist, myCart, manageWishlist, cartTabToggle,sideBar, addToCart,totalPrice}) => {
+    const placeOrderHandler=()=>{
+        localStorage.setItem('order', localStorage.getItem(localStorageVariable.cart) || '[]')
+        navigate('/confirmOrder')
+    }
     const navigate=useNavigate();
     const wishlistCard = wishlist?.map((wishlistData, ind) => <CartCard wishlist={wishlistData} key={ind} manageWishlist={manageWishlist} />);
     const myCartCard = myCart?.map((cartData, ind) => <CartCard wishlist={cartData} key={ind} manageWishlist={manageWishlist} isMyCart={true} addToCart={addToCart}/>);
@@ -56,7 +62,7 @@ type Product= {
                             <p className={style.title}>{cartContainerConstant.TOTAL_AMOUNT}</p>
                             <p>{cartContainerConstant.RUPEES_SYMBOL+' '+totalPrice}</p>
                         </div>
-                        <Button name={buttonNames.PLACE_ORDER} style={style.placeOrderButton} onClick={()=>navigate('/confirmOrder')}></Button>
+                        <Button name={buttonNames.PLACE_ORDER} style={style.placeOrderButton} onClick={placeOrderHandler}></Button>
                     </footer>:''
 
                 }

@@ -16,7 +16,7 @@ export const addWishList=(product)=>{
     const wishlistItems = JSON.parse(localStorage.getItem('wishlist'));
     let tempList=[];
     if(wishlistItems==null){
-       tempList=[product] 
+       tempList=[product]
     }
     else{
     tempList = wishlistItems.filter(item => item.id !== product.id);

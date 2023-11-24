@@ -72,6 +72,7 @@ const ItemPage: React.FC<ItemPageProps> = () => {
     };
 
     useEffect(() => {
+
         fetchProduct(categories).then(data => {
             setItems(data)
             setIsLoading(false);
@@ -84,15 +85,12 @@ const ItemPage: React.FC<ItemPageProps> = () => {
         const wishListData = JSON.parse(localStorage.getItem(localStorageVariable.wishlist) || '[]');
         setCart(myCartData)
         setWishlist(wishListData)
-        const Cart = JSON.parse(localStorage.getItem(localStorageVariable.cart) || '{}');
-        const WishList = JSON.parse(localStorage.getItem(localStorageVariable.wishlist) || '{}');
+        const Cart = JSON.parse(localStorage.getItem(localStorageVariable.cart) || '[]');
+        const WishList = JSON.parse(localStorage.getItem(localStorageVariable.wishlist) || '[]');
         if (Cart.length !== 0 || WishList.length !== 0) {
-            setSidebarActive(true)
-            if (Cart.length !== 0)
-                setSidebar('cart')
-            else {
-                setSidebar('wishlist')
-            }
+            setSidebarActive(true);
+            (Cart.length !== 0)?setSidebar('cart'): setSidebar('wishlist')
+            // }
         }
     }, [])
     const categoryItems = items?.map((ele, ind) => {
