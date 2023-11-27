@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import pauseIcon from '../../assets/play-button.svg';
 import Image from '../images/Image';
 import HOC from '../teaserHOC/AdHandler'
-import style from './Treaser.module.scss';
+import style from './Teaser.module.scss';
 import ShortAd from '../../assets/advertisements/small-promos/Advertisement-Small-2.png';
 import posterImg from '../../assets/advertisements/posterImage.jpeg';
 import { minuteConverter } from '../../utils/CiniflexUtils';
@@ -14,7 +14,7 @@ const Treaser = (props) => {
     const videoRef = useRef(null);
     const pauseIconRef = useRef();
     const [count, setCount] = useState(0);
-    const { showAd, timer, message, displayContentorAd, adsNotification, stopAd, content } = props;
+    const { showAd=true, timer=0, message='', displayContentorAd= () => {}, adsNotification=false, stopAd= () => {}, content={} } = props;
 
     const onPauseHandler = () => {
         videoRef.current.pause();

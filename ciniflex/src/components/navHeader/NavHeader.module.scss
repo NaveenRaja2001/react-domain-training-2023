@@ -1,5 +1,6 @@
+@import '../../colorvariables.scss';
 .navheader {
-    background-color: #000000;
+    background-color: $primary-bg-color;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,8 +11,8 @@
 
 .login {
     border: none;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: $primary-bg-color;
+    color: $primary-text-color;
     margin: 0 50px 0 35px;
     font-size: 23px;
     font-weight: 500;

@@ -8,7 +8,7 @@ import Lottery from '../../components/lottery/Lottery';
 import ErrorBoundary from '../../components/errorBoundary/ErrorBoundary';
 import OtherLanguage from '../../components/otherLanguages/OtherLanguage';
 import NowShowing from '../../components/nowShowing/NowShowing';
-import Treaser from '../../components/treaser/Treaser';
+import Treaser from '../../components/teaser/Teaser';
 import { TeaserConstant } from '../../constants/pageConstant'
 import Loader from '../../components/Loader/Loader';
 import { getShortTeasers } from '../../serivce/MovieService'

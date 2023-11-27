@@ -5,7 +5,7 @@ import Image from '../images/Image';
 import {MOVIE_CONTAINER_CONTSTANTS} from '../../constants/pageConstant';
 import PropTypes from 'prop-types';
 
-export const Movies = ({ movie, setSelectedMovie, likeIncrementer }) => {
+export const Movies = ({ movie={}, setSelectedMovie= () => {}, likeIncrementer= () => {} }) => {
   const likeHandler = () => {
     likeIncrementer(movie?.id);
   }

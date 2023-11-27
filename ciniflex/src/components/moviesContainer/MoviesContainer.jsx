@@ -9,57 +9,57 @@ import Image from '../images/Image';
 import { minuteConverter } from '../../utils/CiniflexUtils';
 import PropTypes from 'prop-types';
 
-import { MOVIE_CONTAINER_CONTSTANTS,BUTTON_CONSTANTS ,DETAILS_AD_SETTINGS} from '../../constants/pageConstant';
+import { MOVIE_CONTAINER_CONTSTANTS, BUTTON_CONSTANTS, DETAILS_AD_SETTINGS } from '../../constants/pageConstant';
 
 export const MoviesContainer = (props) => {
     const { showAd, timer, message, displayContentorAd, adsNotification, stopAd, content, movies, selectedMovie, setSelectedMovie, likeIncrementer } = props;
-    const [currentMovie, setCurrentMovie] = useState(movies[1]);
+
     const [moviesCount, setMoviesCount] = useState(6);
 
     const actors = selectedMovie?.actors?.map((actor, index) => <li key={index}>{actor}</li>)
-    const indivudualMovie = movies?.map((movie, index) => index < moviesCount && <Movies key={movie.id} movie={movie} setSelectedMovie={setSelectedMovie} likeIncrementer={likeIncrementer} />);
 
     const loadMoreHandler = () => {
         setMoviesCount((prevCount) => prevCount >= movies.length ? movies.length : prevCount + 6);
     }
 
+
     const likeCounter = () => {
         likeIncrementer(selectedMovie?.id);
     }
 
+    const updateState = (tempMovie) => {
+        if (tempMovie?.id === selectedMovie?.id) {
+            return;
+        }
+        setSelectedMovie(tempMovie);
+        stopAd();
+        displayContentorAd(DETAILS_AD_SETTINGS.TIME_BEFORE_AD, DETAILS_AD_SETTINGS.ADVERTISEMENT_MESSAGE, true);
+    }
+
+    const indivudualMovie = movies?.map((movie, index) => index < moviesCount && <Movies key={movie.id} movie={movie} setSelectedMovie={updateState} likeIncrementer={likeIncrementer} />);
+
+
     useEffect(() => {
         let interval;
-        if (selectedMovie?.id !== currentMovie?.id) {
-            setCurrentMovie(selectedMovie);
-            stopAd();
-            displayContentorAd(DETAILS_AD_SETTINGS.TIME_BEFORE_AD, DETAILS_AD_SETTINGS.ADVERTISEMENT_MESSAGE, true);
-            if (timer != DETAILS_AD_SETTINGS.TIME_BEFORE_AD) {
-                return;
-            }
-        }
 
-        if (timer >= 0 && !showAd) {
+        if (timer >= 0) {
             interval = setInterval(() => {
-                displayContentorAd(timer - 1, DETAILS_AD_SETTINGS.ADVERTISEMENT_MESSAGE, true)
-            }, 1000);
-
-        }
-        else if (timer <= 0 && !showAd) {
-            displayContentorAd(DETAILS_AD_SETTINGS.TIME_AFTER_AD, DETAILS_AD_SETTINGS.CONTENT_MESSAGE, false)
-        }
-        else if (timer >= 0 && showAd) {
-            interval = setInterval(() => {
-                displayContentorAd(timer - 1, DETAILS_AD_SETTINGS.CONTENT_MESSAGE, false)
+                !showAd ? displayContentorAd(timer - 1, DETAILS_AD_SETTINGS.ADVERTISEMENT_MESSAGE, true) : displayContentorAd(timer - 1, DETAILS_AD_SETTINGS.CONTENT_MESSAGE, false)
             }, 1000);
         }
-        else if (timer < 0 && showAd) {
-            stopAd()
+        else if (timer < 0) {
+            showAd ? stopAd() : displayContentorAd(DETAILS_AD_SETTINGS.TIME_AFTER_AD, DETAILS_AD_SETTINGS.CONTENT_MESSAGE, false)
         }
+
         return () => {
             clearInterval(interval);
         }
 
-    }, [timer, selectedMovie])
+    }, [timer])
+    
+    useEffect(() => {
+        displayContentorAd(DETAILS_AD_SETTINGS.TIME_BEFORE_AD, DETAILS_AD_SETTINGS.ADVERTISEMENT_MESSAGE, true);
+    }, [])
 
     return (
         <div >
@@ -105,21 +105,21 @@ MoviesContainer.propTypes = {
     stopAd: PropTypes.func.isRequired,
     content: PropTypes.string,
     movies: PropTypes.arrayOf(
-      PropTypes.shape({
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            movie: PropTypes.string.isRequired,
+            link: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+    selectedMovie: PropTypes.shape({
         id: PropTypes.string.isRequired,
         movie: PropTypes.string.isRequired,
         link: PropTypes.string.isRequired,
-      })
-    ).isRequired,
-    selectedMovie: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      movie: PropTypes.string.isRequired,
-      link: PropTypes.string.isRequired,
-      actors: PropTypes.arrayOf(PropTypes.string),
-      description: PropTypes.string,
+        actors: PropTypes.arrayOf(PropTypes.string),
+        description: PropTypes.string,
     }).isRequired,
     setSelectedMovie: PropTypes.func.isRequired,
     likeIncrementer: PropTypes.func.isRequired,
-  };
+};
 
 export default HOC(MoviesContainer);

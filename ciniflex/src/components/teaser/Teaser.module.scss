@@ -1,3 +1,4 @@
+@import '../../colorvariables.scss';
 .videoContainer{
 position: relative;
 width: 445px;
@@ -24,7 +25,7 @@ height: 305px;
 .adcounting{
     p{
         margin-top: 5px;
-        color: #3566bc;
+        color: $other-language-color;
     font-size: 16px;
     font-weight: 600;
     }

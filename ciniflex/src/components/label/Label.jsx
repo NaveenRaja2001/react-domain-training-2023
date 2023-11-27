@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const Label = ({ style, name }) => {
+const Label = ({ style='', name='' }) => {
     return (
         <label className={style}>{name}</label>
     )

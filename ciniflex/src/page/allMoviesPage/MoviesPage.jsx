@@ -20,8 +20,8 @@ export const MoviesPage = () => {
   }, []);
 
   const likeIncrementer = (id) => {
-    let updated = movies.map((movie) => {
-      if (movie.id === id) { movie.likes = parseInt(movie.likes) + 1; }
+    let updated = movies?.map((movie) => {
+      if (movie?.id === id) { movie.likes = parseInt(movie.likes) + 1; }
       return movie;
     });
     setMovies(updated)

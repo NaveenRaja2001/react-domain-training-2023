@@ -1,4 +1,4 @@
-
+@import '../../colorvariables.scss';
 body {
     background-color: #111;
 }
@@ -9,13 +9,13 @@ body {
 .nowShowingContent {
     width: 70%;
     margin: 0 auto;
-    color: #ffffff;
+    color: $primary-text-color;
 }
 
 .sectionTitle {
     font-size: 1.5rem;
     font-weight: 500;
-    color: #4b90e2;
+    color: $secondary-text-color;
 }
 
 .movieTitle {

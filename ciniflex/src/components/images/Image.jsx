@@ -2,7 +2,7 @@ import React from 'react';
 import {ERROR_IMAGE} from '../../constants/pageConstant';
 import PropTypes from 'prop-types';
 
- const Image = ({alt,src,style,onClick}) => {
+ const Image = ({alt='',src='',style='',onClick = () => {}}) => {
     const handleBrokenImage = er => {
         er.target.src = {ERROR_IMAGE};
     };

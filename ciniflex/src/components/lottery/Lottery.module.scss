@@ -1,6 +1,7 @@
+@import '../../colorvariables.scss';
 .lotteryContainer {
     letter-spacing: 0.05rem;
-    background: linear-gradient(to right, #D3B523, #bc971d);
+    background: linear-gradient(to right, #D3B523, $secondary-bg-color);
     padding: 35px;
     display: flex;
     align-items: center;
@@ -33,8 +34,8 @@
 }
 
 .lotteryButton {
-    background-color: #ff0000;
-    color: #ffffff;
+    background-color: $button;
+    color: $primary-text-color;
     border: none;
     font-size: 25px;
     padding: 15px 35px;

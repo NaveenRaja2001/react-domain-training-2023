@@ -8,12 +8,12 @@ import style from './LoginPage.module.scss';
 
 
 
-export const LoginPage = ({ setLoginStatus }) => {
+export const LoginPage = ({ setLoginStatus,loginStatus }) => {
     return (
         <>
             <NavHeader />
             <Image alt='coverImage' src={CoverImage} style={style.coverImage} />
-            <LoginCard setLoginStatus={setLoginStatus} />
+            <LoginCard setLoginStatus={setLoginStatus} loginStatus={loginStatus}/>
         </>
 
     )

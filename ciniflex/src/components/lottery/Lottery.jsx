@@ -17,14 +17,11 @@ const Lottery = () => {
 
     const checkLottery = () => {
 
-        if (value.length !== 10) {
-            return;
-        }
+        if (value.length !== 10)  return;
+        
         setValue('');
         const status = validateNumber(value);
-        if (status === LOTTERY_CONSTANTS.LUCKY) { setLotteryStatus(true) } else {
-            setError(status)
-        };
+        status === LOTTERY_CONSTANTS.LUCKY? setLotteryStatus(true):setError(status);
 
     }
     useEffect(() => {

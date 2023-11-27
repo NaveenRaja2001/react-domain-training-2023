@@ -8,15 +8,16 @@ import AllMovies, { MoviesPage } from "./page/allMoviesPage/MoviesPage";
 import ProtectedRoutes from "./components/protectedRoutes/protectedRoutes";
 import { NAVIGATION_CONSTANTS } from "./constants/pageConstant";
 
-const authHandler = {
-  isLoggedIn: false,
-  name: "",
+const authHandler =()=> {
+
+  const login=JSON.parse(localStorage.getItem('user'));
+  return login?login :{isLoggedIn: false,name: ""}
 };
 
 export const loginContext = createContext(authHandler);
 
 function App() {
-  const [loginStatus, setLoginStatus] = useState({});
+  const [loginStatus, setLoginStatus] = useState(authHandler);
   return (
     <loginContext.Provider value={{ loginStatus, setLoginStatus }}>
       <>
@@ -28,7 +29,7 @@ function App() {
           />
           <Route
             path={NAVIGATION_CONSTANTS.LOGIN_PAGE}
-            element={<LoginPage setLoginStatus={setLoginStatus} />}
+            element={<LoginPage setLoginStatus={setLoginStatus} loginStatus={loginStatus}/>}
           />
           <Route
             path={NAVIGATION_CONSTANTS.NOW_SHOWING}
@@ -46,5 +47,7 @@ function App() {
     </loginContext.Provider>
   );
 }
+
+
 
 export default App;
