@@ -1,0 +1,31 @@
+@import '../../colorvariables.scss';
+.coverImage {
+    width: 100%;
+    height: 95vh;
+}
+
+.errorContainer {
+    letter-spacing: 0.05rem;
+    background: linear-gradient(to right, #D3B523, $secondary-bg-color);
+    padding: 35px;
+    display: flex;
+    justify-content: center;
+    p {
+        font-size: 45px;
+        font-weight: 300;
+        padding: 3px 0
+    }
+}
+
+.aaa {
+    height: 200px;
+}
+
+.teaserContainer {
+    display: flex;
+    margin: auto;
+    height: 400px;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 100px;
+}

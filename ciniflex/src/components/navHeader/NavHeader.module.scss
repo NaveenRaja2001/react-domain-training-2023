@@ -1,0 +1,25 @@
+@import '../../colorvariables.scss';
+.navheader {
+    background-color: $primary-bg-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+
+.login {
+    border: none;
+    background-color: $primary-bg-color;
+    color: $primary-text-color;
+    margin: 0 50px 0 35px;
+    font-size: 23px;
+    font-weight: 500;
+
+}
+
+.icon {
+    width: 200px;
+    margin: 25px;
+}
