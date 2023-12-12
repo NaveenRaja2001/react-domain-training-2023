@@ -7,6 +7,8 @@ import { addDefaultSrc } from '../../service/userService';
 import { BROKEN_IMAGE_URL ,BLOGS_CONTENT_EMPTY_ERROR,BUTTON_CONSTANTS} from '../../constants/littleBookConstants';
 import Loader from '../../components/loader/loader';
 import { showToast } from '../../utils/littleBookUtils/blogFinder';
+import EmptyCart from '../../components/emptyCart/EmptyCart';
+import { EMPTYCART } from '../../constants/littleBookConstants';
 
 export const BlogDetails = () => {
   const titleRef = useRef();
@@ -33,8 +35,10 @@ export const BlogDetails = () => {
   }, [isEditingStatus, warningModalStatus]);
 
   return (
+
     <div className={style.individualContent}>
-      {!selectedContent?<Loader/>:
+          {!selectedContent? <EmptyCart text={EMPTYCART.NO_SELECTED_BLOGS}/>:
+    
       <>
       <img src={selectedContent?.photo?selectedContent?.photo:BROKEN_IMAGE_URL} alt={selectedContent?.name} onError={addDefaultSrc}/>
       <textarea ref={titleRef} className={isEditingStatus ? `${style.blogTitle} ${style.border}` : `${style.blogTitle}`} value={isEditingStatus ? undefined : selectedContent?.title} readOnly={!isEditingStatus} />

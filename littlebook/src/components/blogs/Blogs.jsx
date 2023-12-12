@@ -13,7 +13,7 @@ export const ContentCard = ({ content = {} }) => {
     (isEditingStatus || addNewBlogActive) ? dispatch(setWarningModalStatus(true)) : dispatch(setCurrentContent(content))
   }
   return (
-    <div className={(selectedContent.title === content.title) ? styles.selected : ''} onClick={() => individualCardHandler()} >
+    <div className={(selectedContent?.title === content?.title) ? styles.selected : ''} onClick={() => individualCardHandler()} >
       <h3>{content.title}</h3>
       <h4>{content.type}</h4>
       <p>{content.details}</p>

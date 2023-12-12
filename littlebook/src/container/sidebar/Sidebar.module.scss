@@ -9,11 +9,13 @@
   color: var(--black-color);
 
   h2 {
+    cursor: pointer;
     font-size: 27px;
     font-weight: 400;
     word-spacing: 2;
    
     span {
+      cursor: pointer;
       color: #b355b7;
     }
   }

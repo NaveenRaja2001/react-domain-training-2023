@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export const Label = (prop = '') => {
   return (
-    <label {...prop}> {prop.htmlFor}</label>
+    <label className={prop.styles} htmlFor={prop.htmlFor}> {prop.htmlFor}</label>
   )
 }
 

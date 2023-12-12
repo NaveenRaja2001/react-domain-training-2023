@@ -1,37 +1,30 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getBlogs } from '../thunks/blogThunks';
 import { filterBlogsHelper } from '../utils/littleBookUtils/blogFinder.jsx'
-
+export const initialState= {
+    blogData: [],
+    filteredBlogData: [],
+    searchTerm: '',
+    isSearchActive: false,
+    filters: [],
+    isLoad: false,
+    checkBlogs: [],
+    selectedContent: null,
+    isEditingStatus: false,
+    warningModalStatus: false,
+    addNewBlogActive: false,
+    isDisplayMember: false
+};
 const blogSlice = createSlice({
     name: 'blog',
-    initialState: {
-        blogData: [],
-        filteredBlogData: [],
-        searchTerm: '',
-        isSearchActive: false,
-        filters: [],
-        isLoad: false,
-        checkBlogs: [],
-        selectedContent: null,
-        isEditingStatus: false,
-        warningModalStatus: false,
-        addNewBlogActive: false,
-        isDisplayMember: false
-    },
+   initialState,
     reducers: {
         setCurrentContent(state, action) {
             state.selectedContent = action.payload;
         },
-        // modifySearchTerm(state, action) {
-        //     state.searchTerm = action.payload;
-        //     state.filteredBlogData = filterBlogsHelper(state.blogData, state.selectedBlogTypes, state.searchTerm);
-        //     state.selectedContent = state.filteredBlogData.length > 0 ? state.filteredBlogData[0] : null;
-        //     state.scrollTop = true;
-        // },
         setEditStatus(state, action) {
             state.isEditingStatus = action.payload;
         },
-
         searchContent(state, action) {
             state.searchTerm = action.payload;
             state.filteredBlogData = filterBlogsHelper(state.blogData, state.checkBlogs, state.searchTerm);

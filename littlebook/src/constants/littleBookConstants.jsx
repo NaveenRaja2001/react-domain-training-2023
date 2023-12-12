@@ -23,7 +23,10 @@ export const INPUT_TYPE_CONTSTANT={
 export const MODAL_CONSTANTS={
 WARNING_MODAL_TEXT:"Click continue to cancel the editing....!"
 }
-export const EMPTYCART='Empty';
+export const EMPTYCART={
+  EMPTY:'Empty',
+  NO_SELECTED_BLOGS:'No Blog is selected'
+};
 
 export const MEMBERS_CONSTANT={
   MEMBER_IMAGE_URL:`https://jsonmockserver.vercel.app/`,
