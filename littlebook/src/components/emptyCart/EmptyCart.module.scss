@@ -1,0 +1,22 @@
+.emptyCartcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.emptyCartcontainer {
+    div {
+        color:var(--black-color);
+        font-weight: 300;
+        font-size: 18px;
+    }
+}
+
+.emptyCartcontainer {
+    .icon {
+        color:var(--black-color);
+        font-size: 30px;
+        padding: 2px 0 0 5px;
+    }
+}
